@@ -1,10 +1,16 @@
 let colorSelected; 
-
+const MAX_ROWS = 10;  
+const MAX_COLS = 10;
 //Adds a row
 function addR() {
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
 
+   // limits the rows to 10 blocks 
+    if (rows.length >= MAX_ROWS) {
+        alert("Maximum number of rows reached"); // alert pops up the message 
+        return;
+    }
     //if grid is empty need to create row
     if (rows.length === 0) {
         let row = document.createElement("tr");
@@ -34,7 +40,14 @@ function addR() {
 function addC() {
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
-    
+
+// limits the number of column   
+if (rows.length > 0) { 
+    if (rows[0].childElementCount >= MAX_COLS) {  // Check if the first row has reached the maximum number of columns
+        alert("Maximum number of columns reached");
+        return;
+    }
+}
     if (rows.length === 0) {
         let row = document.createElement("tr");
         let col = document.createElement("td");
