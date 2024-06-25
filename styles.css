@@ -1,9 +1,14 @@
+body{
+    background-color:rgb(123, 123, 172); 
+}
 tr,td{
     border:1px;
     border-style: solid;
+    border-color: azure;
 }
+
 td{
     height: 50px;
     width: 50px;
-    background-color: white;
+    background-color:rgb(123, 123, 172);
 }
